@@ -1,34 +1,40 @@
 package com.techreturners.encapsulation.bankaccount.model;
 
 import java.text.MessageFormat;
+import java.util.Objects;
 
 public class WeatherReporter {
 
-    public String location;
-    public double temperature;
+    private String location;
+    private double temperature;
+    final int TEMP_TOO_HIGH = 30;
+    final int TEMP_TOO_LOW = 10;
 
     public WeatherReporter(String location, double temperature) {
         this.location = location;
         this.temperature = temperature;
     }
 
-    public String print() {
+    private  double getTemperatureInFahrenheit(){
+        return (9.0 / 5.0) * temperature + 32;
+    }
 
-        double newTemp = (9.0 / 5.0) * temperature + 32;
-        return MessageFormat.format("I am in {0} and it is {1}. {2}. The temperature in Fahrenheit is {3}.", location, check1(), check2(), newTemp);
+    public String print() {
+        return MessageFormat.format("I am in {0} and it is {1}. {2}. The temperature in Fahrenheit is {3}.",
+                location, checkLocation(), checkTemperature(), getTemperatureInFahrenheit());
 
     }
 
-    public String check1() {
-        if (location == "London") {
+    public String checkLocation() {
+        if (Objects.equals(location, "London")) {
 
             return "🌦";
 
-        } else if (location == "California") {
+        } else if (Objects.equals(location, "California")) {
 
             return "🌅";
 
-        } else if (location == "Cape Town") {
+        } else if (location.equals("Cape Town")) {
 
             return "🌤";
 
@@ -36,12 +42,12 @@ public class WeatherReporter {
         return "🔆";
     }
 
-    public String check2() {
-        if (temperature > 30) {
+    public String checkTemperature() {
+        if (temperature > TEMP_TOO_HIGH) {
 
             return "It's too hot 🥵!";
 
-        } else if (temperature < 10) {
+        } else if (temperature < TEMP_TOO_LOW) {
 
             return "It's too cold 🥶!";
 

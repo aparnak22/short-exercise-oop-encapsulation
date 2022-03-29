@@ -1,7 +1,6 @@
 package com.techreturners.encapsulation.bankaccount.model;
 
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -31,16 +30,16 @@ class WeatherReporterTest {
 
     @Test
     void check1() {
-        assertEquals("🌅",wr1.check1());
-        assertEquals("🌦",wr_Lon.check1());
-        assertEquals("🌤",wr_CapeT.check1());
+        assertEquals("🌅",wr1.checkLocation());
+        assertEquals("🌦",wr_Lon.checkLocation());
+        assertEquals("🌤",wr_CapeT.checkLocation());
 
     }
 
     @Test
     void check2() {
-        assertEquals("Ahhh...it's just right 😊!",wr1.check2());
-        assertEquals("It's too cold 🥶!",wr_Lon.check2());
-        assertEquals("It's too hot 🥵!",wr_CapeT.check2());
+        assertEquals("Ahhh...it's just right 😊!",wr1.checkTemperature());
+        assertEquals("It's too cold 🥶!",wr_Lon.checkTemperature());
+        assertEquals("It's too hot 🥵!",wr_CapeT.checkTemperature());
     }
 }
