@@ -27,30 +27,20 @@ public class WeatherReporter {
 
     public String checkLocation() {
         if (Objects.equals(location, "London")) {
-
             return "🌦";
-
         } else if (Objects.equals(location, "California")) {
-
             return "🌅";
-
         } else if (location.equals("Cape Town")) {
-
             return "🌤";
-
         }
         return "🔆";
     }
 
     public String checkTemperature() {
         if (temperature > TEMP_TOO_HIGH) {
-
             return "It's too hot 🥵!";
-
         } else if (temperature < TEMP_TOO_LOW) {
-
             return "It's too cold 🥶!";
-
         }
         return "Ahhh...it's just right 😊!";
     }
