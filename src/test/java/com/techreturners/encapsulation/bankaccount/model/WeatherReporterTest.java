@@ -19,7 +19,7 @@ class WeatherReporterTest {
     }
 
     @Test
-    void print() {
+    void testWeatherReportIsPrinted() {
         assertEquals("I am in California and it is 🌅. Ahhh...it's just right 😊!. The temperature in Fahrenheit is 71.6.",
                 wr1.print());
         assertEquals("I am in London and it is 🌦. It's too cold 🥶!. The temperature in Fahrenheit is 48.2.",
@@ -29,7 +29,7 @@ class WeatherReporterTest {
     }
 
     @Test
-    void check1() {
+    void testCheckLocation() {
         assertEquals("🌅",wr1.checkLocation());
         assertEquals("🌦",wr_Lon.checkLocation());
         assertEquals("🌤",wr_CapeT.checkLocation());
@@ -37,7 +37,7 @@ class WeatherReporterTest {
     }
 
     @Test
-    void check2() {
+    void testCheckTemperature() {
         assertEquals("Ahhh...it's just right 😊!",wr1.checkTemperature());
         assertEquals("It's too cold 🥶!",wr_Lon.checkTemperature());
         assertEquals("It's too hot 🥵!",wr_CapeT.checkTemperature());
